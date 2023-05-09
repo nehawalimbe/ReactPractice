@@ -1,3 +1,24 @@
+Video :-https://www.youtube.com/watch?v=w7ejDZ8SWv8&list=WL&index=20
+Time :- 11 minutes
+
 React JS is a library.It is NOT a framework like Angular / Vue JS.
 React JS is not having its own router. We have to install extra package react-router-dom. 
 It has entire eco-system of packageto install to make it function as a full fledge framework.
+MVC framework :-
+Model deals with Data
+Conroller deals witn requests & routing  
+View is User Interface
+Why we should use React ?
+    - It structures the View layer of the application
+    - It has re-usable components which hold their own state & data
+    - JSX - Javascript Syntax Extension - It allows us to write dynamic HTML
+    - Apps which are built with react are interactive as it uses Virtual dom. 
+    Bceuase of that we do not have refresh the page. 
+    - All the data in the state is immutable. It means we can not modify (mutate) it directly    
+
+Components in React :-
+    It render/return JSX (JSX) - it looks like HTML
+    We can embed components into another components 
+    Components are dynamic mock-up - they can contain states
+    state - detemines how a component renders & behaves
+    Any data that is displayed in component is state
