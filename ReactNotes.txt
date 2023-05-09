@@ -1,0 +1,3 @@
+React JS is a library.It is NOT a framework like Angular / Vue JS.
+React JS is not having its own router. We have to install extra package react-router-dom. 
+It has entire eco-system of packageto install to make it function as a full fledge framework.
