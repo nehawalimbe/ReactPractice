@@ -1,5 +1,5 @@
 Video :-https://www.youtube.com/watch?v=w7ejDZ8SWv8&list=WL&index=20
-Time :- 11 minutes
+Time :- 16.36 minutes
 
 React JS is a library.It is NOT a framework like Angular / Vue JS.
 React JS is not having its own router. We have to install extra package react-router-dom. 
@@ -22,3 +22,17 @@ Components in React :-
     Components are dynamic mock-up - they can contain states
     state - detemines how a component renders & behaves
     Any data that is displayed in component is state
+
+States in react :-
+In order to share data within multiple compoenent use "App" state or "global" state.
+If there are ton of App level states, that gets difficult to manage. In that case we can use :-
+Context API OR REDUX
+
+Create React App :-
+    Use NPM version > 5.2
+    Use below command :- 
+        npx create-react-app react-task-tracker
+
+Below packages are present in package.json file of the project :-
+react-dom - is responsible for rendering the DOM
+react-scripts - it has development server, build tool
