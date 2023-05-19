@@ -1,5 +1,5 @@
 Video :-https://www.youtube.com/watch?v=w7ejDZ8SWv8&list=WL&index=20
-Time :- 16.36 minutes
+Time :- 18.00 minutes
 
 React JS is a library.It is NOT a framework like Angular / Vue JS.
 React JS is not having its own router. We have to install extra package react-router-dom. 
@@ -36,3 +36,7 @@ Create React App :-
 Below packages are present in package.json file of the project :-
 react-dom - is responsible for rendering the DOM
 react-scripts - it has development server, build tool
+
+index.html is only 1 HTML used - it is a single page application.
+It has <div id="root"></div>
+It is the entry point of the react application
