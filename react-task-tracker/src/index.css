@@ -30,3 +30,15 @@ code {
 .btn {
   font-size: 15px;
 }
+
+.task {
+  background-color: bisque;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.task h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
