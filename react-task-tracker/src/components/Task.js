@@ -1,11 +1,14 @@
-import {FaTimes} from 'react-icons/fa'
-function Task({task, onDelete}) {
-    return (<div className="task">
+import {FaTrashAlt} from 'react-icons/fa'
+function Task({task, onDelete, onToggle}) {
+    return (<div className={`task ${task.reminder && 'reminder'}`} onDoubleClick={()=>{
+    // return (<div className={task.reminder ? 'task reminder' : 'task'} onDoubleClick={()=>{
+            onToggle(task.id)
+        }}>
         <h3 key={task.id}>
             {task.text}
-            <FaTimes onClick={()=> {
+            <FaTrashAlt onClick={()=> {
                 onDelete(task.id)
-            }}></FaTimes>            
+            }}></FaTrashAlt>            
         </h3>
         
         <p>{task.day}</p>

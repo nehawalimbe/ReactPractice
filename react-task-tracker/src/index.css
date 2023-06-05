@@ -29,6 +29,14 @@ code {
 
 .btn {
   font-size: 15px;
+  background-color: darksalmon;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-block {
+  width:100%;
+  display: block;
 }
 
 .task {
@@ -38,6 +46,26 @@ code {
 }
 
 .task h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task.reminder {
+  border-left: 3px solid salmon;
+}
+.form-control {
+  margin: 20px 0;
+}
+.form-control label{
+  display: block;
+}
+
+.form-control input{
+  width: 100%;
+}
+
+.form-control.reminder{
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,4 +1,5 @@
 import './App.css';
+import AddTask from './components/AddTask';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import { useState } from 'react';
@@ -14,7 +15,7 @@ function App() {
     id: 2,
     text: "Dentist's Appointment",
     day: 'June 8th at 6:30pm',
-    reminder: true,
+    reminder: false,
   }, {
     id: 3,
     text: 'Go to Movie',
@@ -24,19 +25,32 @@ function App() {
     id: 4,
     text: 'Grocery Shopping',
     day: 'June 10th at 2:00pm',
-    reminder: true,
+    reminder: false,
   }]);
 
   const deleteTask = (id) => {
-    console.log('delete ->', id);
     setTask(tasks.filter((task)=> {
       return task.id !== id;
     }));
   }
+  
+  const toggleReminder = (id) => {
+    let newTask = tasks.map((task) => {
+      if(task.id === id) {
+        task.reminder = !task.reminder;
+        return task;
+      } else {
+        return task
+      }
+    });
+    setTask(newTask);
+  }
+  
   return (
     <div className="container">
+      <AddTask></AddTask>
       <Header title='Task Tracker' />
-      <Tasks tasks={tasks} onDelete={deleteTask}></Tasks>
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}></Tasks>  : 'No tasks to display'}
     </div>
   );
 }
