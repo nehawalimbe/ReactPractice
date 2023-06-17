@@ -11,6 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .container {
   min-height: 300px;
   overflow: auto;
@@ -34,8 +35,12 @@ code {
   border: none;
 }
 
+.btn.appearance {
+  background-color: lightsalmon;
+}
+
 .btn-block {
-  width:100%;
+  width: 100%;
   display: block;
 }
 
@@ -54,19 +59,24 @@ code {
 .task.reminder {
   border-left: 3px solid salmon;
 }
+
 .form-control {
   margin: 20px 0;
 }
-.form-control label{
+
+.form-control label {
   display: block;
 }
 
-.form-control input{
+.form-control input {
   width: 100%;
 }
 
-.form-control.reminder{
+.form-control.reminder {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.add-task-form {
+  margin-bottom: 20px;
 }

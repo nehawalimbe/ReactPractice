@@ -5,9 +5,10 @@ function Header(props) {
             <h1>
                 {props.title}
             </h1>
-            <button className='btn'>
-                Add Task
+            <button className={`btn ${!props.showAddTaskForm && 'appearance'}`} onClick={props.onAdd}>
+                {`${!props.showAddTaskForm ? 'Add Task' : 'Close'}`}
             </button>
+
         </header>
     );
 }

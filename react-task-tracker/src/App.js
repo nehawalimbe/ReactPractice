@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 
 function App() {
+  const [showAddTaskForm, setShowAddTaskForm] = useState(false);
   const [tasks, setTask] = useState([{
     id: 1,
     text: 'PTM',
@@ -28,6 +29,14 @@ function App() {
     reminder: false,
   }]);
 
+  const addTask = (task) => {
+    console.log(task);
+    let id = [...tasks].length + 1;
+    console.log('id ->', id);
+    let newTask = {id, ...task};
+    setTask([...tasks, newTask]);
+  }
+
   const deleteTask = (id) => {
     setTask(tasks.filter((task)=> {
       return task.id !== id;
@@ -48,8 +57,10 @@ function App() {
   
   return (
     <div className="container">
-      <AddTask></AddTask>
-      <Header title='Task Tracker' />
+      <Header title='Task Tracker' onAdd={()=> {
+        setShowAddTaskForm(!showAddTaskForm);
+      }} showAddTaskForm={showAddTaskForm}/>
+      {showAddTaskForm && <AddTask onAdd={addTask}></AddTask>} 
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}></Tasks>  : 'No tasks to display'}
     </div>
   );
