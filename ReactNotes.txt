@@ -1,5 +1,5 @@
 Video :-https://www.youtube.com/watch?v=w7ejDZ8SWv8&list=WL&index=20
-Time :- 1.21.51 minutes
+Time :- 1.30.27 minutes
 
 React JS is a library.It is NOT a framework like Angular / Vue JS.
 React JS is not having its own router. We have to install extra package react-router-dom. 
@@ -167,3 +167,14 @@ state is immutable so you can not modify the data directly.
 e.g:- you are using 'tasks' array to display the array.
 If we want to add any task to the array we can not directly use method tasks.push().
 We need to use setTasks() method of the state
+----------------------------------------
+start react app :-
+npm start
+
+----------------------------------------
+start json-server :-
+add below under scripts object in package.json :-
+"server": "json-server --watch db.json --port 5000"
+
+run it with below command :-
+npm run server
