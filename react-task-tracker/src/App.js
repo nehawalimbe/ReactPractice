@@ -21,28 +21,63 @@ function App() {
   const fetchTasks = async () => {
     let response = await fetch('http://localhost:5000/tasks');
     let data = await response.json();
-    console.log('task data ->', data);
     return data;
   }
 
-  const addTask = (task) => {
-    console.log(task);
-    let id = [...tasks].length + 1;
-    console.log('id ->', id);
-    let newTask = { id, ...task };
+  const fetchTask = async (id) => {
+    let response = await fetch(`http://localhost:5000/tasks/${id}`);
+    let data = await response.json();
+    return data;
+  }
+
+  const addTask = async (task) => {
+    // let id = [...tasks].length + 1;
+    // let newTask = { id, ...task };
+    // setTask([...tasks, newTask]);
+    console.log('task ->', task);
+    // const res = await fetch('http://localhost:5000/tasks', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-type': 'application/json',
+    //   },
+    //   body: JSON.stringify(task),
+    // })
+    const response = await fetch(`http://localhost:5000/tasks`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(task)
+    });
+    const newTask = await response.json();
+    console.log('new Task ->', newTask);
     setTask([...tasks, newTask]);
   }
 
-  const deleteTask = (id) => {
+  const deleteTask = async (id) => {
+    await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: 'DELETE'
+    });
     setTask(tasks.filter((task) => {
       return task.id !== id;
     }));
   }
 
-  const toggleReminder = (id) => {
+  const toggleReminder = async (id) => {
+    let serverTask = await fetchTask(id);
+    console.log('server task ->', serverTask);
+    serverTask.reminder = !serverTask.reminder;
+    let response = await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json'      
+      },
+      body: JSON.stringify(serverTask)
+    });
+    let updatedTask = await response.json();
     let newTask = tasks.map((task) => {
       if (task.id === id) {
-        task.reminder = !task.reminder;
+        task.reminder = updatedTask.reminder;
         return task;
       } else {
         return task
