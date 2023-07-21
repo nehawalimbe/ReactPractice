@@ -1,5 +1,4 @@
 Video :-https://www.youtube.com/watch?v=w7ejDZ8SWv8&list=WL&index=20
-Time :- 1.39.03 minutes
 
 React JS is a library.It is NOT a framework like Angular / Vue JS.
 React JS is not having its own router. We have to install extra package react-router-dom. 

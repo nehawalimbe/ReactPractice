@@ -1,14 +1,18 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import {useLocation} from 'react-router-dom';
+
 function Header(props) {
+    const location = useLocation()
     return (
         <header className='header'>
             <h1>
                 {props.title}
             </h1>
-            <button className={`btn ${!props.showAddTaskForm && 'appearance'}`} onClick={props.onAdd}>
-                {`${!props.showAddTaskForm ? 'Add Task' : 'Close'}`}
-            </button>
-
+            { 
+                location.pathname === '/' && <button className={`btn ${!props.showAddTaskForm && 'appearance'}`} onClick={props.onAdd}>
+                    {`${!props.showAddTaskForm ? 'Add Task' : 'Close'}`}
+                </button>
+            }
         </header>
     );
 }
